@@ -1,10 +1,11 @@
-import { motion, type Variants } from "framer-motion";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
 import {
   ArrowRight,
   BarChart3,
   BriefcaseBusiness,
   CheckCircle2,
   Handshake,
+  Menu,
   Mail,
   MapPin,
   Megaphone,
@@ -12,7 +13,9 @@ import {
   Sparkles,
   TrendingUp,
   Users,
+  X,
 } from "lucide-react";
+import { useState } from "react";
 import { LinkButton } from "./components/Button";
 import { Section } from "./components/Section";
 import { ServiceCard } from "./components/ServiceCard";
@@ -119,6 +122,8 @@ const staggerChildren: Variants = {
 };
 
 export default function App() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="relative overflow-hidden text-charcoal">
       <motion.div
@@ -162,10 +167,50 @@ export default function App() {
               </motion.a>
             ))}
           </motion.nav>
-          <LinkButton href="#contact" className="px-4 py-2 text-xs sm:text-sm md:px-6 md:py-3">
+          <LinkButton href="#contact" className="hidden px-4 py-2 text-xs sm:text-sm md:inline-flex md:px-6 md:py-3">
             Book Consultation
           </LinkButton>
+          <button
+            type="button"
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            className="inline-flex rounded-full border border-charcoal/15 bg-white/80 p-2 text-charcoal shadow-soft transition hover:text-coral md:hidden"
+            aria-label="Toggle mobile menu"
+            aria-expanded={isMobileMenuOpen}
+          >
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
+        <AnimatePresence>
+          {isMobileMenuOpen ? (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="border-t border-charcoal/10 bg-white/90 px-5 pb-5 pt-4 backdrop-blur-xl md:hidden"
+            >
+              <nav className="mx-auto flex max-w-content flex-col gap-2">
+                {navLinks.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="rounded-2xl px-4 py-3 text-sm font-medium text-charcoal transition hover:bg-coral/10 hover:text-coral"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+                <LinkButton
+                  href="#contact"
+                  className="mt-2 w-full justify-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Book Consultation
+                </LinkButton>
+              </nav>
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
       </header>
 
       <main>
@@ -422,7 +467,7 @@ export default function App() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.55, ease: "easeOut" }}
-            className="mx-auto max-w-content rounded-4xl bg-gradient-to-r from-coral to-[#d8463e] p-8 text-white shadow-glow sm:p-12"
+            className="mx-auto max-w-content rounded-4xl bg-gradient-to-r from-coral to-[#ff2e24] p-8 text-white shadow-glow sm:p-12"
           >
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
@@ -509,7 +554,7 @@ export default function App() {
                 </label>
                 <button
                   type="button"
-                  className="inline-flex items-center justify-center rounded-full bg-coral px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:bg-[#d14a42]"
+                  className="inline-flex items-center justify-center rounded-full bg-coral px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:bg-[#e9342a]"
                 >
                   Submit Request
                 </button>
