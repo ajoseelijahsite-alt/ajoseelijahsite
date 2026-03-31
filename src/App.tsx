@@ -1,7 +1,6 @@
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 import {
   ArrowRight,
-  BarChart3,
   BriefcaseBusiness,
   CheckCircle2,
   Handshake,
@@ -240,16 +239,20 @@ export default function App() {
           </div>
         </section>
 
-        <section className="px-5 py-6 sm:px-8">
+        <section className="bg-roseMist/45 px-5 py-6 sm:px-8">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
             variants={staggerChildren}
-            className="mx-auto grid max-w-content gap-3 rounded-4xl border border-white/70 bg-white/75 p-4 shadow-soft backdrop-blur-sm md:grid-cols-4"
+            className="mx-auto grid max-w-content gap-3 rounded-4xl border border-coral/15 bg-white/85 p-4 shadow-soft backdrop-blur-sm md:grid-cols-4"
           >
             {["Business Consultant", "Marketing Consultant", "Executive Coach", "Partnership"].map((item) => (
-              <motion.div key={item} variants={revealUp} className="rounded-3xl bg-blush px-4 py-3 text-center">
+              <motion.div
+                key={item}
+                variants={revealUp}
+                className="rounded-3xl bg-gradient-to-br from-[#fff2f1] to-[#ffe3e1] px-4 py-3 text-center"
+              >
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slateWarm">{item}</p>
               </motion.div>
             ))}
@@ -322,6 +325,7 @@ export default function App() {
           eyebrow="Core Services"
           title="Three core advisory pillars built for impact."
           align="center"
+          className="bg-gradient-to-b from-white to-roseMist/40"
         >
           <div className="grid gap-5 md:grid-cols-3">
             {services.map((service) => (
@@ -331,7 +335,7 @@ export default function App() {
         </Section>
 
         <section id="book-intro" className="px-5 py-6 sm:px-8 lg:py-10">
-          <div className="mx-auto max-w-content rounded-4xl border border-coral/20 bg-gradient-to-r from-white to-roseMist p-6 shadow-soft sm:p-8">
+          <div className="mx-auto max-w-content rounded-4xl border border-coral/20 bg-gradient-to-r from-[#fff2f1] via-roseMist to-[#ffd8d5] p-6 shadow-soft sm:p-8">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-coral">Book</p>
@@ -354,6 +358,7 @@ export default function App() {
           id="why-us"
           eyebrow="Why Work With Elijah"
           title="Clarity, structure, and execution that produce measurable outcomes."
+          className="bg-roseMist/35"
         >
           <div className="grid gap-4 sm:grid-cols-2">
             {reasons.map((item) => (
@@ -362,7 +367,7 @@ export default function App() {
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                className="soft-surface rounded-3xl px-5 py-4 shadow-soft"
+                className="rounded-3xl border border-coral/15 bg-white px-5 py-4 shadow-soft"
               >
                 <p className="flex items-center gap-3 text-sm text-slateWarm sm:text-base">
                   <Handshake size={17} className="shrink-0 text-coral" />
@@ -373,7 +378,13 @@ export default function App() {
           </div>
         </Section>
 
-        <Section id="process" eyebrow="Working Model" title="A disciplined four-step growth process." align="center">
+        <Section
+          id="process"
+          eyebrow="Working Model"
+          title="A disciplined four-step growth process."
+          align="center"
+          className="bg-gradient-to-b from-white to-roseMist/35"
+        >
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {process.map((step, idx) => (
               <motion.article
@@ -382,7 +393,7 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.45, delay: idx * 0.06, ease: "easeOut" }}
-                className="soft-surface rounded-4xl p-6 shadow-soft"
+                className="rounded-4xl border border-coral/15 bg-white p-6 shadow-soft"
               >
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-coral">Step {idx + 1}</p>
                 <h3 className="text-lg font-semibold text-charcoal">{step.title}</h3>
@@ -412,15 +423,15 @@ export default function App() {
                 </motion.figure>
               ))}
               <div className="grid gap-4 sm:grid-cols-3">
-                <div className="rounded-3xl bg-roseMist px-4 py-4 text-center">
+                <div className="rounded-3xl bg-gradient-to-b from-[#ffe7e5] to-[#ffd9d6] px-4 py-4 text-center">
                   <p className="text-xl font-semibold text-charcoal">15,000+</p>
                   <p className="text-xs text-slateWarm">People impacted</p>
                 </div>
-                <div className="rounded-3xl bg-roseMist px-4 py-4 text-center">
+                <div className="rounded-3xl bg-gradient-to-b from-[#ffe7e5] to-[#ffd9d6] px-4 py-4 text-center">
                   <p className="text-xl font-semibold text-charcoal">4 Regions</p>
                   <p className="text-xs text-slateWarm">Cross-market advisory</p>
                 </div>
-                <div className="rounded-3xl bg-roseMist px-4 py-4 text-center">
+                <div className="rounded-3xl bg-gradient-to-b from-[#ffe7e5] to-[#ffd9d6] px-4 py-4 text-center">
                   <p className="text-xl font-semibold text-charcoal">10+ Years</p>
                   <p className="text-xs text-slateWarm">Strategy and execution</p>
                 </div>

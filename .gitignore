@@ -3,3 +3,9 @@ dist
 .DS_Store
 .github-deploy-key
 .github-deploy-key.pub
+tailwind.config.js
+tailwind.config.d.ts
+vite.config.js
+vite.config.d.ts
+tsconfig.app.tsbuildinfo
+tsconfig.node.tsbuildinfo
