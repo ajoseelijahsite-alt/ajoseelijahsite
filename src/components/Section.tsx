@@ -24,7 +24,7 @@ export function Section({
   const isCenter = align === "center";
 
   return (
-    <section id={id} className={`px-5 py-16 sm:px-8 lg:py-24 ${className}`}>
+    <section id={id} className={`px-5 py-14 sm:px-8 lg:py-20 ${className}`}>
       <div className="mx-auto max-w-content">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -38,11 +38,11 @@ export function Section({
               {eyebrow}
             </p>
           ) : null}
-          <h2 className="text-3xl font-semibold leading-tight text-charcoal sm:text-4xl">
+          <h2 className="text-[1.9rem] font-semibold leading-tight text-charcoal sm:text-[2.25rem]">
             {title}
           </h2>
           {description ? (
-            <p className="mt-4 text-base leading-relaxed text-slateWarm sm:text-lg">
+            <p className="mt-4 text-[0.98rem] leading-relaxed text-slateWarm sm:text-base">
               {description}
             </p>
           ) : null}

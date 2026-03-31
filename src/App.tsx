@@ -126,48 +126,49 @@ export default function App() {
 
   return (
     <div className="relative overflow-hidden text-charcoal">
+      <div className="silicon-grid absolute inset-0 z-0 opacity-40" />
       <motion.div
         aria-hidden
         animate={{ x: [0, 20, 0], y: [0, -16, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="ambient-ring float-gentle -left-28 top-24 h-72 w-72 opacity-50"
+        className="ambient-ring float-gentle -left-28 top-24 h-72 w-72 opacity-35"
       />
       <motion.div
         aria-hidden
         animate={{ x: [0, -18, 0], y: [0, 16, 0] }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        className="ambient-ring float-side -right-16 top-[24rem] h-64 w-64 opacity-40"
+        className="ambient-ring float-side -right-16 top-[24rem] h-64 w-64 opacity-30"
       />
       <motion.div
         aria-hidden
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="ambient-ring bottom-[12rem] left-[34%] h-44 w-44 opacity-35"
+        className="ambient-ring bottom-[12rem] left-[34%] h-44 w-44 opacity-25"
       />
-      <header className="sticky top-0 z-50 border-b border-white/50 bg-blush/85 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-white/60 bg-blush/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-content items-center justify-between px-5 py-4 sm:px-8">
-          <a href="#" className="text-sm font-semibold tracking-[0.14em] text-charcoal sm:text-base">
+          <a href="#" className="text-xs font-semibold tracking-[0.1em] text-charcoal sm:text-sm">
             THE AJOSE ELIJAH COMPANY
           </a>
           <motion.nav
             initial="hidden"
             animate="show"
             variants={staggerChildren}
-            className="hidden items-center gap-7 md:flex"
+            className="hidden items-center gap-6 md:flex"
           >
             {navLinks.map((item) => (
               <motion.a
                 key={item.href}
                 href={item.href}
                 variants={revealUp}
-                className="group relative text-sm text-slateWarm transition-colors hover:text-coral"
+                className="group relative text-[13px] text-slateWarm transition-colors hover:text-coral"
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-coral transition-all duration-300 group-hover:w-full" />
               </motion.a>
             ))}
           </motion.nav>
-          <LinkButton href="#contact" className="hidden px-4 py-2 text-xs sm:text-sm md:inline-flex md:px-6 md:py-3">
+          <LinkButton href="#contact" className="hidden px-4 py-2 text-xs md:inline-flex">
             Book Consultation
           </LinkButton>
           <button
@@ -213,8 +214,8 @@ export default function App() {
         </AnimatePresence>
       </header>
 
-      <main>
-        <section className="relative px-5 pb-12 pt-14 sm:px-8 lg:pb-20 lg:pt-20">
+      <main className="relative z-10">
+        <section className="relative px-5 pb-10 pt-10 sm:px-8 lg:pb-16 lg:pt-16">
           <div className="mx-auto grid max-w-content items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
             <motion.div
               initial="hidden"
@@ -223,26 +224,26 @@ export default function App() {
             >
               <motion.p
                 variants={revealUp}
-                className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/75 px-4 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-coral shadow-soft"
+                className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/85 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-coral shadow-soft"
               >
                 <Sparkles size={14} />
                 Premium consulting and management
               </motion.p>
               <motion.h1
                 variants={revealUp}
-                className="text-gradient text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl"
+                className="text-gradient text-[2.05rem] font-semibold leading-[1.12] sm:text-[2.5rem] lg:text-[3.2rem]"
               >
                 Strategic Consulting That Elevates Your Brand, Business, and Financial Future
               </motion.h1>
               <motion.p
                 variants={revealUp}
-                className="mt-6 max-w-2xl text-base leading-relaxed text-slateWarm sm:text-lg"
+                className="mt-5 max-w-xl text-[0.97rem] leading-relaxed text-slateWarm sm:text-base"
               >
                 The Ajose Elijah Company helps businesses and ambitious professionals grow with
                 clarity, strategy, and influence through executive-level consulting, systems
                 optimization, and market-smart decision making.
               </motion.p>
-              <motion.div variants={revealUp} className="mt-8 flex flex-wrap items-center gap-4">
+              <motion.div variants={revealUp} className="mt-7 flex flex-wrap items-center gap-3">
                 <LinkButton href="#contact">Book Consultation</LinkButton>
                 <LinkButton href="#services" variant="secondary">
                   Explore Services
@@ -250,7 +251,7 @@ export default function App() {
               </motion.div>
               <motion.div
                 variants={staggerChildren}
-                className="mt-10 grid max-w-xl gap-4 sm:grid-cols-3"
+                className="mt-8 grid max-w-xl gap-3 sm:grid-cols-3"
               >
                 <StatCard value="10+ Years" label="Entrepreneurship and advisory experience" />
                 <StatCard value="5,000+" label="People trained across multiple sectors" />
@@ -263,13 +264,13 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.08, ease: "easeOut" }}
               whileHover={{ y: -6 }}
-              className="relative overflow-hidden rounded-[2.5rem] bg-hero-glow p-4 shadow-soft"
+              className="relative overflow-hidden rounded-[2.2rem] bg-hero-glow p-3 shadow-soft"
             >
-              <div className="glass relative overflow-hidden rounded-[2rem] p-4 sm:p-6">
+              <div className="glass relative overflow-hidden rounded-[1.8rem] p-4 sm:p-5">
                 <img
                   src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
                   alt="Executive business strategy session"
-                  className="h-[420px] w-full rounded-3xl object-cover transition-transform duration-700 hover:scale-[1.03]"
+                  className="h-[390px] w-full rounded-3xl object-cover transition-transform duration-700 hover:scale-[1.03]"
                 />
                 <motion.div
                   animate={{ y: [0, -6, 0] }}
@@ -277,7 +278,7 @@ export default function App() {
                   className="glass absolute left-8 top-8 rounded-2xl px-4 py-3 shadow-soft"
                 >
                   <p className="text-xs uppercase tracking-[0.14em] text-slateWarm">Growth Focus</p>
-                  <p className="mt-1 text-lg font-semibold text-charcoal">Brand. Systems. Wealth.</p>
+                  <p className="mt-1 text-base font-semibold text-charcoal">Brand. Systems. Wealth.</p>
                 </motion.div>
                 <motion.div
                   animate={{ y: [0, 7, 0] }}
@@ -285,7 +286,7 @@ export default function App() {
                   className="glass absolute bottom-8 right-8 rounded-2xl px-4 py-3 shadow-soft"
                 >
                   <p className="text-xs uppercase tracking-[0.14em] text-slateWarm">Client Impact</p>
-                  <p className="mt-1 flex items-center gap-2 text-lg font-semibold text-charcoal">
+                  <p className="mt-1 flex items-center gap-2 text-base font-semibold text-charcoal">
                     <Users size={18} className="text-coral" />
                     Scalable transformation
                   </p>
@@ -295,23 +296,23 @@ export default function App() {
           </div>
         </section>
 
-        <section className="px-5 py-8 sm:px-8">
+        <section className="px-5 py-6 sm:px-8">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
             variants={staggerChildren}
-            className="mx-auto grid max-w-content gap-4 rounded-4xl border border-white/60 bg-white/70 p-6 shadow-soft backdrop-blur-sm md:grid-cols-3"
+            className="mx-auto grid max-w-content gap-3 rounded-4xl border border-white/70 bg-white/75 p-4 shadow-soft backdrop-blur-sm md:grid-cols-3"
           >
-            <motion.div variants={revealUp} className="rounded-3xl bg-blush px-5 py-4 transition hover:-translate-y-1 hover:shadow-soft">
+            <motion.div variants={revealUp} className="rounded-3xl bg-blush px-4 py-3 transition hover:-translate-y-1 hover:shadow-soft">
               <p className="text-xs uppercase tracking-[0.14em] text-slateWarm">Business Consultant</p>
               <p className="mt-2 font-medium text-charcoal">Clarity, structure, measurable growth</p>
             </motion.div>
-            <motion.div variants={revealUp} className="rounded-3xl bg-blush px-5 py-4 transition hover:-translate-y-1 hover:shadow-soft">
+            <motion.div variants={revealUp} className="rounded-3xl bg-blush px-4 py-3 transition hover:-translate-y-1 hover:shadow-soft">
               <p className="text-xs uppercase tracking-[0.14em] text-slateWarm">Marketing Consultant</p>
               <p className="mt-2 font-medium text-charcoal">Positioning, engagement, conversions</p>
             </motion.div>
-            <motion.div variants={revealUp} className="rounded-3xl bg-blush px-5 py-4 transition hover:-translate-y-1 hover:shadow-soft">
+            <motion.div variants={revealUp} className="rounded-3xl bg-blush px-4 py-3 transition hover:-translate-y-1 hover:shadow-soft">
               <p className="text-xs uppercase tracking-[0.14em] text-slateWarm">Executive Coach & Partnership</p>
               <p className="mt-2 font-medium text-charcoal">Leadership, influence, strategic alliances</p>
             </motion.div>
@@ -461,18 +462,18 @@ export default function App() {
           </div>
         </Section>
 
-        <section className="px-5 py-8 sm:px-8 lg:py-12">
+        <section className="px-5 py-6 sm:px-8 lg:py-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.55, ease: "easeOut" }}
-            className="mx-auto max-w-content rounded-4xl bg-gradient-to-r from-coral to-[#ff2e24] p-8 text-white shadow-glow sm:p-12"
+            className="mx-auto max-w-content rounded-4xl bg-gradient-to-r from-coral to-[#ff2e24] p-7 text-white shadow-glow sm:p-10"
           >
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
                 <p className="text-xs uppercase tracking-[0.14em] text-white/80">Start your next phase</p>
-                <h3 className="mt-3 text-3xl font-semibold leading-tight sm:text-4xl">
+                <h3 className="mt-3 text-2xl font-semibold leading-tight sm:text-[2rem]">
                   Build a stronger brand, smarter systems, and scalable growth strategy.
                 </h3>
               </div>
