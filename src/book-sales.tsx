@@ -38,6 +38,14 @@ const parts = [
   },
 ];
 
+const transformationBullets = [
+  "Clarity over confusion",
+  "Structure over chaos",
+  "Intelligence over impulse",
+  "Systems over struggle",
+  "Scale over survival",
+];
+
 function BookSalesPage() {
   return (
     <div className="min-h-screen bg-white px-5 py-8 text-charcoal sm:px-8">
@@ -65,7 +73,7 @@ function BookSalesPage() {
             <img
               src="/images/book-cover-clean.png"
               alt="The Intelligent of Wealth book cover"
-              className="w-full rounded-3xl object-cover"
+              className="w-full rounded-3xl object-contain"
             />
           </motion.div>
 
@@ -89,6 +97,16 @@ function BookSalesPage() {
               If something still feels off despite your hard work, this book reveals the missing
               intelligence behind wealth: clarity, structure, discipline, and execution.
             </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {transformationBullets.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-coral/20 bg-coral/5 px-3 py-1 text-xs font-medium text-slateWarm"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {outcomes.map((item) => (
@@ -110,7 +128,7 @@ function BookSalesPage() {
           </motion.div>
         </section>
 
-        <section className="mt-12 rounded-4xl bg-gradient-to-r from-[#fff1ef] to-white p-7 shadow-soft sm:p-9">
+        <section className="mt-12 rounded-4xl border border-coral/15 bg-gradient-to-r from-[#fff1ef] to-white p-7 shadow-soft sm:p-9">
           <h2 className="text-2xl font-semibold leading-tight sm:text-3xl">
             What if the problem is not effort... but understanding?
           </h2>
@@ -143,10 +161,44 @@ function BookSalesPage() {
           </div>
         </section>
 
-        <section className="mt-12 grid gap-4 md:grid-cols-3">
-          <img src="/images/book-stack-desk.png" alt="Book stack on desk" className="h-[250px] w-full rounded-3xl object-cover shadow-soft" />
-          <img src="/images/book-purple-display.png" alt="Book display on purple background" className="h-[250px] w-full rounded-3xl object-cover shadow-soft" />
-          <img src="/images/book-wall-shadow.png" alt="Book against textured wall" className="h-[250px] w-full rounded-3xl object-cover shadow-soft" />
+        <section className="mt-12 rounded-4xl border border-coral/15 bg-white p-6 shadow-soft sm:p-8">
+          <div className="grid items-center gap-7 lg:grid-cols-[1fr_1fr]">
+            <div>
+              <p className="inline-flex rounded-full bg-coral/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-coral">
+                Premium Print Preview
+              </p>
+              <h3 className="mt-3 text-2xl font-semibold leading-tight text-charcoal sm:text-3xl">
+                Built to feel like a practical handbook for serious builders.
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-slateWarm sm:text-base">
+                This is the exact cover identity of <strong>The Intelligence of Wealth</strong>. The
+                visual system was designed to communicate clarity, intelligence, and scale at first glance.
+              </p>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-2xl border border-coral/20 bg-[#fff5f4] px-4 py-3">
+                  <p className="text-lg font-semibold text-charcoal">7 Parts</p>
+                  <p className="text-xs text-slateWarm">End-to-end growth framework</p>
+                </div>
+                <div className="rounded-2xl border border-coral/20 bg-[#fff5f4] px-4 py-3">
+                  <p className="text-lg font-semibold text-charcoal">Actionable</p>
+                  <p className="text-xs text-slateWarm">Built for immediate execution</p>
+                </div>
+              </div>
+            </div>
+
+            <motion.figure
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="overflow-hidden rounded-[2.2rem] border border-coral/15 bg-gradient-to-b from-[#fff8f8] to-white p-5 shadow-soft"
+            >
+              <img
+                src="/images/book-cover-clean.png"
+                alt="The Intelligence of Wealth full book cover"
+                className="h-[520px] w-full rounded-[2rem] border border-coral/25 object-contain shadow-soft"
+              />
+            </motion.figure>
+          </div>
         </section>
 
         <section className="mt-12 rounded-4xl bg-gradient-to-r from-coral to-[#ff2e24] p-8 text-white shadow-glow sm:p-10">
