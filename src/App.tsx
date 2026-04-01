@@ -177,65 +177,69 @@ export default function App() {
       </header>
 
       <main className="relative z-10">
-        <section className="relative px-5 pb-10 pt-10 sm:px-8 lg:pb-16 lg:pt-14">
-          <div className="mx-auto grid max-w-content items-center gap-10 lg:grid-cols-[1fr_0.95fr] lg:gap-12">
-            <motion.div initial="hidden" animate="show" variants={staggerChildren}>
-              <motion.p
-                variants={revealUp}
-                className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/85 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-coral shadow-soft"
-              >
-                <Sparkles size={14} />
-                Architect of strategic wealth and scalable influence
-              </motion.p>
-              <motion.h1
-                variants={revealUp}
-                className="text-gradient text-[2.05rem] font-semibold leading-[1.12] sm:text-[2.5rem] lg:text-[3.2rem]"
-              >
-                Elijah Ajose helps leaders turn potential into structure, strategy, and sustainable wealth.
-              </motion.h1>
-              <motion.p
-                variants={revealUp}
-                className="mt-5 max-w-xl text-[0.97rem] leading-relaxed text-slateWarm sm:text-base"
-              >
-                Founder of The Ajose Elijah Company and CEO of Mibitriz Global Multibiz, Elijah
-                combines consulting intelligence, marketing precision, and executive coaching to
-                build profitable systems across Africa and global markets.
-              </motion.p>
-              <motion.div variants={revealUp} className="mt-7 flex flex-wrap items-center gap-3">
-                <LinkButton href="#contact">Book Consultation</LinkButton>
-                <LinkButton href="#book" variant="secondary">
-                  Explore The Intelligent of Wealth
-                </LinkButton>
+        <section className="relative px-5 pb-10 pt-8 sm:px-8 lg:pb-16 lg:pt-10">
+          <div className="mx-auto max-w-content rounded-[2.4rem] bg-gradient-to-br from-coral via-[#ff3a30] to-[#e9150a] p-6 shadow-[0_22px_70px_rgba(255,36,24,0.35)] lg:p-8">
+            <div className="grid items-center gap-9 lg:grid-cols-[1.05fr_0.95fr]">
+              <motion.div initial="hidden" animate="show" variants={staggerChildren}>
+                <motion.p
+                  variants={revealUp}
+                  className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white"
+                >
+                  <Sparkles size={14} />
+                  Strategic advisory and wealth intelligence
+                </motion.p>
+                <motion.h1
+                  variants={revealUp}
+                  className="text-[2.15rem] font-semibold leading-[1.08] text-white sm:text-[2.8rem] lg:text-[3.45rem]"
+                >
+                  Build authority, scale your business, and structure lasting wealth.
+                </motion.h1>
+                <motion.p
+                  variants={revealUp}
+                  className="mt-5 max-w-xl text-[0.98rem] leading-relaxed text-white/90 sm:text-base"
+                >
+                  Elijah Ajose helps entrepreneurs and organizations move from effort-driven growth
+                  to system-driven scale through consulting, executive coaching, and strategic
+                  market positioning.
+                </motion.p>
+                <motion.div variants={revealUp} className="mt-7 flex flex-wrap items-center gap-3">
+                  <LinkButton href="#contact">Book Consultation</LinkButton>
+                  <LinkButton
+                    href="#book-intro"
+                    variant="secondary"
+                    className="border-white/40 bg-white/15 text-white hover:text-white"
+                  >
+                    Explore The Intelligent of Wealth
+                  </LinkButton>
+                </motion.div>
+                <motion.div variants={staggerChildren} className="mt-8 grid max-w-xl gap-3 sm:grid-cols-3">
+                  <StatCard value="10+ Years" label="Consulting and strategy experience" />
+                  <StatCard value="15,000+" label="Individuals mentored and trained" />
+                  <StatCard value="4 Regions" label="Africa, Europe, UK, Middle East projects" />
+                </motion.div>
               </motion.div>
-              <motion.div variants={staggerChildren} className="mt-8 grid max-w-xl gap-3 sm:grid-cols-3">
-                <StatCard value="10+ Years" label="Consulting and strategy experience" />
-                <StatCard value="15,000+" label="Individuals mentored and trained" />
-                <StatCard value="4 Regions" label="Africa, Europe, UK, Middle East projects" />
-              </motion.div>
-            </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 22 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, ease: "easeOut" }}
-              className="relative overflow-hidden rounded-[2.1rem] bg-hero-glow p-3 shadow-soft"
-            >
-              <div className="glass relative overflow-hidden rounded-[1.8rem] p-4">
+              <motion.div
+                initial={{ opacity: 0, y: 22 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.65, ease: "easeOut" }}
+                className="relative overflow-hidden rounded-[2rem] border border-white/25 bg-white/10 p-3 backdrop-blur-sm"
+              >
                 <img
                   src="/images/elijah-hero.png"
                   alt="Elijah Ajose portrait"
-                  className="h-[430px] w-full rounded-3xl object-cover object-top"
+                  className="h-[460px] w-full rounded-[1.5rem] object-cover object-top"
                 />
-                <div className="glass absolute left-6 top-6 rounded-2xl px-4 py-2 shadow-soft">
-                  <p className="text-xs uppercase tracking-[0.12em] text-slateWarm">Mission</p>
-                  <p className="mt-1 text-sm font-semibold text-charcoal">Empowering Excellence</p>
+                <div className="absolute left-5 top-5 rounded-xl bg-white/20 px-3 py-2 text-white backdrop-blur-sm">
+                  <p className="text-[10px] uppercase tracking-[0.12em] text-white/75">Mission</p>
+                  <p className="mt-1 text-xs font-semibold">Empowering Excellence</p>
                 </div>
-                <div className="glass absolute bottom-6 right-6 rounded-2xl px-4 py-2 shadow-soft">
-                  <p className="text-xs uppercase tracking-[0.12em] text-slateWarm">Framework</p>
-                  <p className="mt-1 text-sm font-semibold text-charcoal">Establish • Execute • Excel • Exceed</p>
+                <div className="absolute bottom-5 right-5 rounded-xl bg-white/20 px-3 py-2 text-white backdrop-blur-sm">
+                  <p className="text-[10px] uppercase tracking-[0.12em] text-white/75">Framework</p>
+                  <p className="mt-1 text-xs font-semibold">Establish • Execute • Excel • Exceed</p>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
