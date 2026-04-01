@@ -125,7 +125,16 @@ export default function App() {
       <header className="sticky top-0 z-50 border-b border-charcoal/10 bg-white/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-content items-center justify-between px-5 py-4 sm:px-8">
           <a href="#" className="inline-flex items-center gap-3">
-            <img src="/images/taec-logo.png" alt="The Ajose Elijah Company logo" className="h-9 w-auto" />
+            <img
+              src="/images/icon1.png"
+              alt="The Ajose Elijah Company logo"
+              className="h-9 w-auto md:hidden"
+            />
+            <img
+              src="/images/icon2.png"
+              alt="The Ajose Elijah Company logo"
+              className="hidden h-9 w-auto md:block"
+            />
           </a>
           <motion.nav
             initial="hidden"
