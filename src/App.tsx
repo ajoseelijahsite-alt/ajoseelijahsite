@@ -30,13 +30,13 @@ const navLinks = [
 const services = [
   {
     icon: BriefcaseBusiness,
-    title: "Business Consultant",
+    title: "Business Consulting",
     description:
       "Translate your vision into structured execution using practical frameworks for setup, systems, positioning, and scalable growth.",
   },
   {
     icon: Megaphone,
-    title: "Marketing Consultant",
+    title: "Marketing Consulting",
     description:
       "Build brand authority, attract the right audience, and convert visibility into revenue through clear, data-driven marketing strategy.",
   },
@@ -89,6 +89,13 @@ const testimonials = [
   },
 ];
 
+const galleryItems = [
+  { src: "/images/elijah-award-full.png", alt: "Elijah Ajose at leadership awards event" },
+  { src: "/images/elijah-award-close.png", alt: "Elijah Ajose holding award portrait" },
+  { src: "/images/elijah-award-trophy.png", alt: "Inspirational Thought Leader Award trophy" },
+  { src: "/images/elijah-award-handshake.png", alt: "Elijah Ajose with fellow award recipient" },
+];
+
 const revealUp: Variants = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
@@ -101,6 +108,10 @@ const staggerChildren: Variants = {
 
 export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeGalleryImage, setActiveGalleryImage] = useState<{
+    src: string;
+    alt: string;
+  } | null>(null);
 
   return (
     <div className="relative overflow-hidden text-charcoal">
@@ -113,8 +124,8 @@ export default function App() {
       />
       <header className="sticky top-0 z-50 border-b border-charcoal/10 bg-white/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-content items-center justify-between px-5 py-4 sm:px-8">
-          <a href="#" className="text-xs font-semibold tracking-[0.1em] text-charcoal sm:text-sm">
-            THE AJOSE ELIJAH COMPANY
+          <a href="#" className="inline-flex items-center gap-3">
+            <img src="/images/taec-logo.png" alt="The Ajose Elijah Company logo" className="h-9 w-auto" />
           </a>
           <motion.nav
             initial="hidden"
@@ -178,7 +189,7 @@ export default function App() {
 
       <main className="relative z-10">
         <section className="relative px-5 pb-10 pt-8 sm:px-8 lg:pb-16 lg:pt-10">
-          <div className="mx-auto max-w-content rounded-[2.4rem] bg-gradient-to-br from-coral via-[#ff3a30] to-[#e9150a] p-6 shadow-[0_22px_70px_rgba(255,36,24,0.35)] lg:p-8">
+          <div className="mx-auto max-w-content rounded-[2.4rem] bg-brand-spectrum p-6 shadow-[0_22px_70px_rgba(0,132,203,0.28)] lg:p-8">
             <div className="grid items-center gap-9 lg:grid-cols-[1.05fr_0.95fr]">
               <motion.div initial="hidden" animate="show" variants={staggerChildren}>
                 <motion.p
@@ -243,7 +254,7 @@ export default function App() {
           </div>
         </section>
 
-        <section className="bg-roseMist/45 px-5 py-6 sm:px-8">
+        <section className="bg-brand-soft px-5 py-6 sm:px-8">
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -251,11 +262,11 @@ export default function App() {
             variants={staggerChildren}
             className="mx-auto grid max-w-content gap-3 rounded-4xl border border-coral/15 bg-white/85 p-4 shadow-soft backdrop-blur-sm md:grid-cols-4"
           >
-            {["Business Consultant", "Marketing Consultant", "Executive Coach", "Partnership"].map((item) => (
+            {["Business Consulting", "Marketing Consulting", "Executive Coach", "Partnership"].map((item) => (
               <motion.div
                 key={item}
                 variants={revealUp}
-                className="rounded-3xl bg-gradient-to-br from-[#fff2f1] to-[#ffe3e1] px-4 py-3 text-center"
+                className="rounded-3xl bg-gradient-to-br from-brandBlue/10 via-brandRed/10 to-brandGreen/10 px-4 py-3 text-center"
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slateWarm">{item}</p>
               </motion.div>
@@ -310,8 +321,8 @@ export default function App() {
               className="relative overflow-hidden rounded-4xl bg-gradient-to-br from-white to-roseMist p-3 shadow-soft"
             >
               <img
-                src="/images/elijah-standing.png"
-                alt="Elijah Ajose standing portrait"
+                src="/images/elijah-award-full.png"
+                alt="Elijah Ajose at awards event"
                 className="h-[460px] w-full rounded-4xl object-cover object-top"
               />
               <div className="glass absolute bottom-7 left-7 rounded-2xl px-4 py-3 shadow-soft">
@@ -319,6 +330,13 @@ export default function App() {
                 <p className="mt-1 text-sm font-semibold text-charcoal">
                   Wealth is engineered with structure.
                 </p>
+              </div>
+              <div className="absolute right-5 top-5 overflow-hidden rounded-2xl border border-white/40 bg-white/85 p-1 shadow-soft">
+                <img
+                  src="/images/elijah-award-trophy.png"
+                  alt="Inspirational Thought Leader Award"
+                  className="h-24 w-20 rounded-xl object-cover"
+                />
               </div>
             </motion.div>
           </div>
@@ -339,7 +357,7 @@ export default function App() {
         </Section>
 
         <section id="book-intro" className="px-5 py-6 sm:px-8 lg:py-10">
-          <div className="mx-auto max-w-content rounded-4xl border border-coral/20 bg-gradient-to-r from-[#fff2f1] via-roseMist to-[#ffd8d5] p-6 shadow-soft sm:p-8">
+          <div className="mx-auto max-w-content rounded-4xl border border-coral/20 bg-brand-soft p-6 shadow-soft sm:p-8">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-coral">Book</p>
@@ -351,7 +369,7 @@ export default function App() {
                   digital marketing and AI.
                 </p>
               </div>
-              <LinkButton href="/book-sales.html">
+              <LinkButton href="/book-sales.html" variant="secondary" className="bg-white text-charcoal">
                 Go to Book Sales Page <ArrowRight size={16} className="ml-1" />
               </LinkButton>
             </div>
@@ -362,7 +380,7 @@ export default function App() {
           id="why-us"
           eyebrow="Why Work With Elijah"
           title="Clarity, structure, and execution that produce measurable outcomes."
-          className="bg-roseMist/35"
+          className="bg-brand-soft"
         >
           <div className="grid gap-4 sm:grid-cols-2">
             {reasons.map((item) => (
@@ -407,16 +425,36 @@ export default function App() {
           </div>
         </Section>
 
-        <Section id="testimonials" eyebrow="Social Proof" title="Credibility backed by measurable transformation.">
-          <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="grid gap-5">
+        <Section
+          id="testimonials"
+          eyebrow="Social Proof"
+          title="Results, recognition, and measurable transformation."
+          className="bg-gradient-to-b from-brand-soft to-white"
+        >
+          <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="space-y-5">
+              <div className="grid gap-3 sm:grid-cols-3">
+                <div className="rounded-3xl bg-gradient-to-r from-brandBlue/25 to-brandGreen/20 px-4 py-4 text-center">
+                  <p className="text-xl font-semibold text-charcoal">15,000+</p>
+                  <p className="text-xs text-slateWarm">People impacted</p>
+                </div>
+                <div className="rounded-3xl bg-gradient-to-r from-brandRed/25 to-brandYellow/25 px-4 py-4 text-center">
+                  <p className="text-xl font-semibold text-charcoal">4 Regions</p>
+                  <p className="text-xs text-slateWarm">Cross-market advisory</p>
+                </div>
+                <div className="rounded-3xl bg-gradient-to-r from-brandGreen/25 to-brandBlue/20 px-4 py-4 text-center">
+                  <p className="text-xl font-semibold text-charcoal">10+ Years</p>
+                  <p className="text-xs text-slateWarm">Strategy and execution</p>
+                </div>
+              </div>
+
               {testimonials.map((testimonial) => (
                 <motion.figure
                   key={testimonial.name}
                   initial={{ opacity: 0, y: 18 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
-                  className="rounded-4xl border border-coral/20 bg-white p-6 shadow-soft"
+                  className="rounded-4xl border border-coral/15 bg-white/95 p-6 shadow-soft"
                 >
                   <blockquote className="text-base leading-relaxed text-slateWarm">
                     "{testimonial.quote}"
@@ -426,33 +464,48 @@ export default function App() {
                   </figcaption>
                 </motion.figure>
               ))}
-              <div className="grid gap-4 sm:grid-cols-3">
-                <div className="rounded-3xl bg-gradient-to-b from-[#ffe7e5] to-[#ffd9d6] px-4 py-4 text-center">
-                  <p className="text-xl font-semibold text-charcoal">15,000+</p>
-                  <p className="text-xs text-slateWarm">People impacted</p>
-                </div>
-                <div className="rounded-3xl bg-gradient-to-b from-[#ffe7e5] to-[#ffd9d6] px-4 py-4 text-center">
-                  <p className="text-xl font-semibold text-charcoal">4 Regions</p>
-                  <p className="text-xs text-slateWarm">Cross-market advisory</p>
-                </div>
-                <div className="rounded-3xl bg-gradient-to-b from-[#ffe7e5] to-[#ffd9d6] px-4 py-4 text-center">
-                  <p className="text-xl font-semibold text-charcoal">10+ Years</p>
-                  <p className="text-xs text-slateWarm">Strategy and execution</p>
-                </div>
-              </div>
             </div>
-            <div className="overflow-hidden rounded-4xl shadow-soft">
+
+            <div className="relative overflow-hidden rounded-4xl border border-coral/15 bg-white p-3 shadow-soft">
               <img
                 src="/images/elijah-seated.png"
                 alt="Elijah Ajose"
-                className="h-full min-h-[420px] w-full object-cover object-top"
+                className="h-full min-h-[460px] w-full rounded-[1.4rem] object-cover object-top"
               />
+              <div className="absolute bottom-6 left-6 rounded-xl bg-white/85 px-4 py-2 text-xs font-semibold text-charcoal backdrop-blur-sm">
+                Award-winning consultant and executive coach
+              </div>
             </div>
           </div>
         </Section>
 
+        <Section
+          id="gallery"
+          eyebrow="Gallery"
+          title="Moments, milestones, and recognition."
+          description="Click any image to view full size."
+          className="bg-brand-soft"
+        >
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {galleryItems.map((item) => (
+              <motion.button
+                key={item.src}
+                type="button"
+                onClick={() => setActiveGalleryImage(item)}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                whileHover={{ y: -4 }}
+                className="overflow-hidden rounded-3xl border border-white/60 shadow-soft"
+              >
+                <img src={item.src} alt={item.alt} className="h-64 w-full object-cover object-top" />
+              </motion.button>
+            ))}
+          </div>
+        </Section>
+
         <section className="px-5 py-6 sm:px-8 lg:py-10">
-          <div className="mx-auto max-w-content rounded-4xl bg-gradient-to-r from-coral to-[#ff2e24] p-7 text-white shadow-glow sm:p-10">
+          <div className="mx-auto max-w-content rounded-4xl bg-brand-spectrum p-7 text-white shadow-glow sm:p-10">
             <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
                 <p className="text-xs uppercase tracking-[0.12em] text-white/80">Connect. Collaborate. Build.</p>
@@ -541,6 +594,35 @@ export default function App() {
           <p>Wealth intelligence. Strategic execution. Scalable influence.</p>
         </div>
       </footer>
+
+      <AnimatePresence>
+        {activeGalleryImage ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-charcoal/80 p-5"
+          >
+            <button
+              type="button"
+              onClick={() => setActiveGalleryImage(null)}
+              className="absolute right-6 top-6 rounded-full bg-white/20 p-2 text-white transition hover:bg-white/30"
+              aria-label="Close gallery image"
+            >
+              <X size={20} />
+            </button>
+            <motion.img
+              initial={{ scale: 0.94, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.96, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              src={activeGalleryImage.src}
+              alt={activeGalleryImage.alt}
+              className="max-h-[86vh] w-auto max-w-[92vw] rounded-2xl border border-white/20 bg-white object-contain"
+            />
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </div>
   );
 }
