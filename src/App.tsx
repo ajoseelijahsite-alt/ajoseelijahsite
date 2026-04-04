@@ -42,7 +42,7 @@ const services = [
   },
   {
     icon: Users,
-    title: "Executive Coach",
+    title: "Executive Coaching",
     description:
       "Develop identity clarity, leadership discipline, and decision-making power so your business grows at the speed of your capacity.",
   },
@@ -92,8 +92,12 @@ const testimonials = [
 const galleryItems = [
   { src: "/images/elijah-award-full.png", alt: "Elijah Ajose at leadership awards event" },
   { src: "/images/elijah-award-close.png", alt: "Elijah Ajose holding award portrait" },
-  { src: "/images/elijah-award-trophy.png", alt: "Inspirational Thought Leader Award trophy" },
+  { src: "/images/Award image.jpeg", alt: "Elijah Ajose award event portrait" },
   { src: "/images/elijah-award-handshake.png", alt: "Elijah Ajose with fellow award recipient" },
+  { src: "/images/OP1.jpeg", alt: "OP! - 1" },
+  { src: "/images/OP2.jpeg", alt: "OP! - 2" },
+  { src: "/images/OP3.jpeg", alt: "OP! - 3" },
+  { src: "/images/OP4.jpeg", alt: "OP! - 4" },
 ];
 
 const revealUp: Variants = {
@@ -227,9 +231,9 @@ export default function App() {
                   <LinkButton
                     href="#book-intro"
                     variant="secondary"
-                    className="border-white/40 bg-white/15 text-white hover:text-white"
+                    className="border-white/55 bg-black/20 text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.4)] hover:bg-black/25 hover:text-white"
                   >
-                    Explore The Intelligent of Wealth
+                    Explore The Intelligence of Wealth
                   </LinkButton>
                 </motion.div>
                 <motion.div variants={staggerChildren} className="mt-8 grid max-w-xl gap-3 sm:grid-cols-3">
@@ -246,16 +250,16 @@ export default function App() {
                 className="relative overflow-hidden rounded-[2rem] border border-white/25 bg-white/10 p-3 backdrop-blur-sm"
               >
                 <img
-                  src="/images/elijah-hero.png"
+                  src="/images/Main hero image.jpeg"
                   alt="Elijah Ajose portrait"
                   className="h-[460px] w-full rounded-[1.5rem] object-cover object-top"
                 />
-                <div className="absolute left-5 top-5 rounded-xl bg-white/20 px-3 py-2 text-white backdrop-blur-sm">
-                  <p className="text-[10px] uppercase tracking-[0.12em] text-white/75">Mission</p>
+                <div className="absolute left-5 top-5 rounded-xl bg-black/25 px-3 py-2 text-white backdrop-blur-sm">
+                  <p className="text-[10px] uppercase tracking-[0.12em] text-white/90">Mission</p>
                   <p className="mt-1 text-xs font-semibold">Empowering Excellence</p>
                 </div>
-                <div className="absolute bottom-5 right-5 rounded-xl bg-white/20 px-3 py-2 text-white backdrop-blur-sm">
-                  <p className="text-[10px] uppercase tracking-[0.12em] text-white/75">Framework</p>
+                <div className="absolute bottom-5 right-5 rounded-xl bg-black/25 px-3 py-2 text-white backdrop-blur-sm">
+                  <p className="text-[10px] uppercase tracking-[0.12em] text-white/90">Framework</p>
                   <p className="mt-1 text-xs font-semibold">Establish • Execute • Excel • Exceed</p>
                 </div>
               </motion.div>
@@ -271,7 +275,7 @@ export default function App() {
             variants={staggerChildren}
             className="mx-auto grid max-w-content gap-3 rounded-4xl border border-coral/15 bg-white/85 p-4 shadow-soft backdrop-blur-sm md:grid-cols-4"
           >
-            {["Business Consulting", "Marketing Consulting", "Executive Coach", "Partnership"].map((item) => (
+            {["Business Consulting", "Marketing Consulting", "Executive Coaching", "Partnership"].map((item) => (
               <motion.div
                 key={item}
                 variants={revealUp}
@@ -287,7 +291,7 @@ export default function App() {
           id="about"
           eyebrow="About Elijah Ajose"
           title="Elijah Ajose — Architect of Strategic Wealth and Scalable Influence."
-          description="Elijah Ajose is an award-winning business consultant, executive coach, and marketing strategist focused on one mission: helping people and organizations move from confusion to clarity, effort to structure, and survival to scalable success."
+          description="Elijah Ajose is an award-winning business consultant, executive coaching advisor, and marketing strategist focused on one mission: helping people and organizations move from confusion to clarity, effort to structure, and survival to scalable success."
         >
           <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
             <motion.div
@@ -371,7 +375,7 @@ export default function App() {
               <div className="max-w-2xl">
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-coral">Book</p>
                 <h3 className="mt-2 text-2xl font-semibold text-charcoal sm:text-[2rem]">
-                  The Intelligent of Wealth
+                  The Intelligence of Wealth
                 </h3>
                 <p className="mt-2 text-sm text-slateWarm sm:text-base">
                   The framework for personal growth, business, and financial mastery in the age of
@@ -482,7 +486,7 @@ export default function App() {
                 className="h-full min-h-[460px] w-full rounded-[1.4rem] object-cover object-top"
               />
               <div className="absolute bottom-6 left-6 rounded-xl bg-white/85 px-4 py-2 text-xs font-semibold text-charcoal backdrop-blur-sm">
-                Award-winning consultant and executive coach
+                Award-winning consultant and executive coaching advisor
               </div>
             </div>
           </div>

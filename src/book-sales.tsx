@@ -71,8 +71,8 @@ function BookSalesPage() {
             className="rounded-4xl bg-gradient-to-br from-[#2b177e] to-[#5d24d4] p-5 shadow-glow"
           >
             <img
-              src="/images/book-cover-clean.png"
-              alt="The Intelligent of Wealth book cover"
+              src="/images/IOW.png"
+              alt="The Intelligence of Wealth book cover"
               className="w-full rounded-3xl object-contain"
             />
           </motion.div>
@@ -88,7 +88,7 @@ function BookSalesPage() {
               New Release by Elijah Ajose
             </p>
             <h1 className="mt-4 text-3xl font-semibold leading-tight text-charcoal sm:text-4xl">
-              The Intelligent of Wealth
+              The Intelligence of Wealth
             </h1>
             <p className="mt-4 text-base leading-relaxed text-slateWarm">
               The blueprint for entrepreneurs who refuse to stay broke, stuck, or invisible.
@@ -118,7 +118,7 @@ function BookSalesPage() {
             </div>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <LinkButton href="mailto:theajoseelijah@gmail.com?subject=Book%20Order%20-%20The%20Intelligent%20of%20Wealth">
+              <LinkButton href="mailto:theajoseelijah@gmail.com?subject=Book%20Order%20-%20The%20Intelligence%20of%20Wealth">
                 Get The Book Now <ArrowRight size={16} className="ml-1" />
               </LinkButton>
               <LinkButton href="tel:+2348085339900" variant="secondary">
@@ -193,7 +193,7 @@ function BookSalesPage() {
               className="overflow-hidden rounded-[2.2rem] border border-coral/15 bg-gradient-to-b from-[#fff8f8] to-white p-5 shadow-soft"
             >
               <img
-                src="/images/book-cover-clean.png"
+                src="/images/IOW.png"
                 alt="The Intelligence of Wealth full book cover"
                 className="h-[520px] w-full rounded-[2rem] border border-coral/25 object-contain shadow-soft"
               />
@@ -208,7 +208,7 @@ function BookSalesPage() {
             level starts with the way you think and execute.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <LinkButton href="mailto:theajoseelijah@gmail.com?subject=Book%20Order%20-%20The%20Intelligent%20of%20Wealth" variant="secondary" className="bg-white text-charcoal">
+            <LinkButton href="mailto:theajoseelijah@gmail.com?subject=Book%20Order%20-%20The%20Intelligence%20of%20Wealth" variant="secondary" className="bg-white text-charcoal">
               Order Your Copy
             </LinkButton>
             <LinkButton href="tel:+2348085339900" variant="secondary" className="border-white/40 bg-white/10 text-white hover:text-white">
