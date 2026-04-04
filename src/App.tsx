@@ -216,7 +216,7 @@ export default function App() {
                   variants={revealUp}
                   className="text-[2.15rem] font-semibold leading-[1.08] text-white sm:text-[2.8rem] lg:text-[3.45rem]"
                 >
-                  Build authority, scale your business, and structure lasting wealth.
+                  Build authority, scale your business, and structure lasting wealth for Africa and beyond.
                 </motion.h1>
                 <motion.p
                   variants={revealUp}
