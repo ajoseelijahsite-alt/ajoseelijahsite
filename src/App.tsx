@@ -89,7 +89,7 @@ const testimonials = [
   },
 ];
 
-const contactEmail = "ajoseelijahsite@gmail.com";
+const contactEmail = "theajoseelijah@gmail.com";
 
 const galleryItems = [
   { src: "/images/elijah-award-full.png", alt: "Elijah Ajose at leadership awards event" },
