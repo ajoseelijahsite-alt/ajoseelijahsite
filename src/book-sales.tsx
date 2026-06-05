@@ -46,6 +46,8 @@ const transformationBullets = [
   "Scale over survival",
 ];
 
+const bookOrderUrl = "https://selar.com/157bz9b7w4";
+
 function BookSalesPage() {
   return (
     <div className="min-h-screen bg-white px-5 py-8 text-charcoal sm:px-8">
@@ -118,7 +120,7 @@ function BookSalesPage() {
             </div>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <LinkButton href="mailto:theajoseelijah@gmail.com?subject=Book%20Order%20-%20The%20Intelligence%20of%20Wealth">
+              <LinkButton href={bookOrderUrl} target="_blank" rel="noopener noreferrer">
                 Get The Book Now <ArrowRight size={16} className="ml-1" />
               </LinkButton>
               <LinkButton href="tel:+2348085339900" variant="secondary">
@@ -208,7 +210,13 @@ function BookSalesPage() {
             level starts with the way you think and execute.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <LinkButton href="mailto:theajoseelijah@gmail.com?subject=Book%20Order%20-%20The%20Intelligence%20of%20Wealth" variant="secondary" className="bg-white text-charcoal">
+            <LinkButton
+              href={bookOrderUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="secondary"
+              className="bg-white text-charcoal"
+            >
               Order Your Copy
             </LinkButton>
             <LinkButton href="tel:+2348085339900" variant="secondary" className="border-white/40 bg-white/10 text-white hover:text-white">

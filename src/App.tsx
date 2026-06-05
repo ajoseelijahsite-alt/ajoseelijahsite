@@ -13,7 +13,7 @@ import {
   Users,
   X,
 } from "lucide-react";
-import { useState } from "react";
+import { type FormEvent, useState } from "react";
 import { LinkButton } from "./components/Button";
 import { Section } from "./components/Section";
 import { ServiceCard } from "./components/ServiceCard";
@@ -89,6 +89,8 @@ const testimonials = [
   },
 ];
 
+const contactEmail = "ajoseelijahsite@gmail.com";
+
 const galleryItems = [
   { src: "/images/elijah-award-full.png", alt: "Elijah Ajose at leadership awards event" },
   { src: "/images/elijah-award-close.png", alt: "Elijah Ajose holding award portrait" },
@@ -116,6 +118,27 @@ export default function App() {
     src: string;
     alt: string;
   } | null>(null);
+
+  function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("name") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
+    const subject = encodeURIComponent("Consultation Request - Ajose Elijah Website");
+    const body = encodeURIComponent(
+      [
+        `Full name: ${name}`,
+        `Email address: ${email}`,
+        "",
+        "Message:",
+        message,
+      ].join("\n"),
+    );
+
+    window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+  }
 
   return (
     <div className="relative overflow-hidden text-charcoal">
@@ -552,7 +575,9 @@ export default function App() {
                 <Mail size={18} className="mt-0.5 text-coral" />
                 <div>
                   <p className="text-sm font-semibold text-charcoal">Email</p>
-                  <p className="text-slateWarm">theajoseelijah@gmail.com</p>
+                  <a className="text-slateWarm transition hover:text-coral" href={`mailto:${contactEmail}`}>
+                    {contactEmail}
+                  </a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -563,12 +588,21 @@ export default function App() {
                 </div>
               </div>
             </div>
-            <form className="soft-surface rounded-4xl p-7 shadow-soft sm:p-8">
+            <form
+              action={`mailto:${contactEmail}`}
+              method="post"
+              encType="text/plain"
+              onSubmit={handleContactSubmit}
+              className="soft-surface rounded-4xl p-7 shadow-soft sm:p-8"
+            >
               <h3 className="text-xl font-semibold text-charcoal">Consultation form</h3>
               <div className="mt-5 grid gap-4">
                 <label className="text-sm">
                   <span className="mb-2 block text-slateWarm">Full name</span>
                   <input
+                    name="name"
+                    autoComplete="name"
+                    required
                     className="w-full rounded-2xl border border-charcoal/10 bg-white px-4 py-3 text-charcoal outline-none transition focus:border-coral/50"
                     placeholder="Your full name"
                   />
@@ -576,7 +610,10 @@ export default function App() {
                 <label className="text-sm">
                   <span className="mb-2 block text-slateWarm">Email address</span>
                   <input
+                    name="email"
                     type="email"
+                    autoComplete="email"
+                    required
                     className="w-full rounded-2xl border border-charcoal/10 bg-white px-4 py-3 text-charcoal outline-none transition focus:border-coral/50"
                     placeholder="you@example.com"
                   />
@@ -584,13 +621,15 @@ export default function App() {
                 <label className="text-sm">
                   <span className="mb-2 block text-slateWarm">Message</span>
                   <textarea
+                    name="message"
                     rows={4}
+                    required
                     className="w-full rounded-2xl border border-charcoal/10 bg-white px-4 py-3 text-charcoal outline-none transition focus:border-coral/50"
                     placeholder="Tell us what you want to build"
                   />
                 </label>
                 <button
-                  type="button"
+                  type="submit"
                   className="inline-flex items-center justify-center rounded-full bg-coral px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:bg-[#e9342a]"
                 >
                   Submit Request
