@@ -118,6 +118,7 @@ export default function App() {
     src: string;
     alt: string;
   } | null>(null);
+  const [contactDraftUrl, setContactDraftUrl] = useState("");
 
   function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -138,8 +139,10 @@ export default function App() {
         message,
       ].join("\n"),
     );
+    const mailtoUrl = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
 
-    window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+    setContactDraftUrl(mailtoUrl);
+    window.location.assign(mailtoUrl);
   }
 
   return (
@@ -636,6 +639,15 @@ export default function App() {
                 >
                   Submit Request
                 </button>
+                {contactDraftUrl ? (
+                  <p className="text-sm leading-relaxed text-slateWarm" role="status" aria-live="polite">
+                    Your email app should open with the request ready to send. If nothing opened,{" "}
+                    <a className="font-semibold text-coral transition hover:text-charcoal" href={contactDraftUrl}>
+                      open the email draft
+                    </a>{" "}
+                    or email {contactEmail} directly.
+                  </p>
+                ) : null}
               </div>
             </form>
           </div>
