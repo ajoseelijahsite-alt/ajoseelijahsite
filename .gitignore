@@ -1,6 +1,10 @@
 node_modules
 dist
 .DS_Store
+.env
+.env.*
+!.env.example
+src/secret.md
 .github-deploy-key
 .github-deploy-key.pub
 tailwind.config.js

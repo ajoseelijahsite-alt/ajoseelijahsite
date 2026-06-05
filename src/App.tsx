@@ -129,6 +129,8 @@ export default function App() {
     const subject = encodeURIComponent("Consultation Request - Ajose Elijah Website");
     const body = encodeURIComponent(
       [
+        "Source: The Ajose Elijah Company website contact form",
+        "",
         `Full name: ${name}`,
         `Email address: ${email}`,
         "",
